@@ -23,7 +23,7 @@ export function App() {
 
   return (
     <main className="w-full h-[100dvh] flex justify-center items-center bg-indigo-50">
-      <div className="w-1/2 flex flex-col gap-4 h-2/3 overflow-auto">
+      <div className="w-1/2 h-2/3 mb-4 overflow-auto">
         <header className="w-1/2 flex justify-between items-center p-4 rounded-md bg-indigo-900 fixed top-16">
           <strong className="text-lg text-white">Posts</strong>
           <button className="w-36 p-2 flex justify-center items-center gap-2 bg-fuchsia-600 text-white rounded-md font-semibold">
@@ -31,12 +31,14 @@ export function App() {
             Add post
           </button>
         </header>
-        {posts.map((post) => (
-          <Post
-            key={post.id}
-            {...post}
-          />
-        ))}
+        <ul className="flex flex-col gap-4">
+          {posts.map((post) => (
+            <Post
+              key={post.id}
+              {...post}
+            />
+          ))}
+        </ul>
       </div>
     </main>
   );
